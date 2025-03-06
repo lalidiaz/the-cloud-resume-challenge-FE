@@ -39,7 +39,7 @@ variable "tf_state_bucket" {
 }
 
 variable "tf_state_bucket_key" {
-  description = "S3 backend bucket name"
+  description = "S3 backend bucket key"
   type        = string
 }
 

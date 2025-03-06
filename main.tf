@@ -33,6 +33,16 @@ variable "aws_region" {
   type        = string
 }
 
+variable "tf_state_bucket" {
+  description = "S3 backend bucket name"
+  type        = string
+}
+
+variable "tf_state_bucket_key" {
+  description = "S3 backend bucket name"
+  type        = string
+}
+
 terraform {
   required_providers {
     aws = {
@@ -44,9 +54,9 @@ terraform {
   required_version = ">= 1.2.0"
 
   backend "s3" {
-    bucket  = "tf-state-bucket-laura"
-    key     = "state-fe/terraform.tfstate"
-    region  = "us-east-1"
+    bucket  = var.tf_state_bucket
+    key     = var.tf_state_bucket_key
+    region  = var.aws_region
     encrypt = true
   }
 

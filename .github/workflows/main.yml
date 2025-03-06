@@ -21,7 +21,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 1.2.0
+          terraform_version: 1.11.1
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v3
